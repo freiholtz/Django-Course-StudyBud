@@ -1,5 +1,7 @@
 # StudyBud-course
+
 https://www.youtube.com/watch?v=PtQiiknWUcI
+https://github.com/divanov11/StudyBud/
 
 To kick-start my python coding career I will do a couple of solid django project sites and this was the first 7 hour course that felt well rounded creating a forum like with login and CRUD functionality in the Python Django framework.
 
@@ -9,4 +11,3 @@ Things thag got clearer during this project
 - hot reload of browser for Django on save https://github.com/tjwalch/django-livereload-server
 - Django
 - Python
-
