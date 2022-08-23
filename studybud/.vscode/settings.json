@@ -8,5 +8,6 @@
   },
   "[django-html]": {
     "editor.formatOnSave": false
-  }
+  },
+  "python.linting.lintOnSave": true,
 }
