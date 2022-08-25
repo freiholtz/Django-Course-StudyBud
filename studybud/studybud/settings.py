@@ -18,10 +18,10 @@ import os
 load_dotenv()
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 1
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
+SECURE_SSL_REDIRECT = False
+SECURE_HSTS_SECONDS = 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+SECURE_HSTS_PRELOAD = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -147,7 +147,7 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR / "static/images"
 
-# STATIC_ROOT =
+STATIC_ROOT = "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
