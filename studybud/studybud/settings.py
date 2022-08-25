@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "base.apps.BaseConfig",
     "livereload",
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "livereload.middleware.LiveReloadScript",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "studybud.urls"
@@ -133,3 +135,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ALLOW_ALL_ORIGINS = True
