@@ -6,7 +6,7 @@
 
 ## Keywords
 
-Python, Django, CRUD, REST API, VSCode, Terminal, SSH, Linux, cPanel.
+Python, Django, CRUD, REST API, Dev/Prod dynamic settings, VSCode, Terminal, SSH, Linux, cPanel, Deployment.
 
 ## Course outline i followed
 
