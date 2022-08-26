@@ -1,0 +1,12 @@
+---
+deployment:
+  tasks:
+    - source /home/freiholt/virtualenv/domains/studybud.davidfreiholtz.com/django/studybud/3.9/bin/activate
+    - cd /home/freiholt/domains/studybud.davidfreiholtz.com/django/studybud
+    - cp -r ../../repo/* ../.
+    - python -m pip install -r ../requirements.txt
+    - python -m manage.py makemigrations
+    - python -m manage.py migrate
+    - python manage.py collectstatic
+    - cp -r staticfiles/* ../../www/static/
+    - cp -r static/images/* ../../www/images/

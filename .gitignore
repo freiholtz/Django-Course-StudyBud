@@ -4,6 +4,12 @@
 # Mac stuff
 *.DS_Store
 
+# VSCode
+.vscode/
+
+# cPanel
+# .cpanel.yml
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/

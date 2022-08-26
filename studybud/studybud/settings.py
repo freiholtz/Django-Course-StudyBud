@@ -11,17 +11,38 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# print "django dev ?"
+# print os.environ.get("DJANGO_DEV")
 
-SECURE_SSL_REDIRECT = False
-SECURE_HSTS_SECONDS = 0
-SECURE_HSTS_INCLUDE_SUBDOMAINS = False
-SECURE_HSTS_PRELOAD = False
+# Dev or Production settings
+if os.environ.get("DJANGO_DEV") is not None:
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_SSL_REDIRECT = False
+    DEBUG = True
+    SECURE_HSTS_SECONDS = 0
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    SECURE_HSTS_PRELOAD = False
+    HOST_SCHEME = "http://"
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "studybud.davidfreiholtz.com"]
+    from dotenv import load_dotenv
+
+    load_dotenv()
+else:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 60
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    SECURE_HSTS_PRELOAD = False
+
+    ALLOWED_HOSTS = ["studybud.davidfreiholtz.com"]
+
+    DEBUG = False
+
+# ----------------------------------------------------------------
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,16 +51,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ["127.0.0.1", "studybud.davidfreiholtz.com"]
-
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Application definition
 
