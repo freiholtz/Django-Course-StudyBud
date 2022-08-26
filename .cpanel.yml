@@ -10,3 +10,4 @@ deployment:
     - python manage.py collectstatic
     - cp -r staticfiles/* ../../www/static/
     - cp -r static/images/* ../../www/images/
+    - touch etc/restart.txt
