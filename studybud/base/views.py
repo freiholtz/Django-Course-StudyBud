@@ -56,7 +56,7 @@ def registerPage(request):
 
     if request.method == "POST":
         form = MyUserCreationForm(request.POST)
-        if form.is_valid():
+        if form.is_valid() and False:
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
